@@ -47,17 +47,22 @@
                 --add-flags "-f ${atticConfig}/server.toml"
             '';
           };
+          gen-key = pkgs.writeShellScriptBin "gen-key" ''
+            ${pkgs.openssl}/bin/openssl genrsa -traditional 4096 | base64 -w 0
+          '';
           dev = shell {
             name = "cache";
             packages = with pkgs; [
               configuredAttic
               jinja2-cli
+              gen-key
             ];
           };
         in
         {
           packages = {
             default = configuredAttic;
+            inherit gen-key;
           };
           devShells = {
             default = dev;

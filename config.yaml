@@ -8,5 +8,5 @@ SQLITE_DB_PATH: "/tmp/.local/share/attic/server.db"
 STORAGE_PATH: "/tmp/.local/share/attic/storage"
 
 # A RSA PEM PKCS1 private key 
-# (generate with `ssh-keygen -t rsa -m PEM -f mykey` and Base64 encode it)
+# (generate with the command `gen-key` in the Nix environment)
 PRIVATE_KEY: ""
