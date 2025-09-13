@@ -1,0 +1,13 @@
+Include /etc/ssh/sshd_config.d/*.conf
+
+AcceptEnv COLORTERM LANG LC_*
+AcceptEnv LANG LC_*
+ChallengeResponseAuthentication no
+ClientAliveInterval 120
+KbdInteractiveAuthentication no
+PermitUserEnvironment yes
+AcceptEnv PATH
+PrintMotd no
+PubkeyAuthentication yes
+UsePAM yes
+StrictModes no
